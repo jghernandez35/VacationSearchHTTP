@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Agregar Paquete</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #form="ngForm">
+
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input name="nombre" type="text" [(ngModel)]="paquete.nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-bottom>
+      <ion-label floating>Precio</ion-label>
+      <ion-input name="precio" type="number" [(ngModel)]="paquete.precio" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-bottom>
+      <ion-label floating>Descripcion</ion-label>
+      <ion-input name="descripcion" type="text" [(ngModel)]="paquete.descripcion" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-bottom>
+        <ion-label floating>URL Imagen</ion-label>
+        <ion-input name="imagen" type="text" [(ngModel)]="paquete.imagen" required></ion-input>
+      </ion-item>
+    <button ion-button block full margin-top (click)="save()" [disabled]="!form.valid"> Guardar </button>
+
+  </form>
+</ion-content>

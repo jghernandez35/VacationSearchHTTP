@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title >
+      Paquetes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText = "Deliza para recargar"
+      refreshingText="Recargando ..."
+    ></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let p of data">
+      <img src="{{p.imagen}}" alt="">
+      <h2>{{p.nombre}}</h2>
+      <p>Precio: {{p.precio}}</p>
+      <p>Descripcion: {{p.descripcion}}</p>      
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-fab right bottom>
+  <button ion-fab color="primary" (click)="goToAdd()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
